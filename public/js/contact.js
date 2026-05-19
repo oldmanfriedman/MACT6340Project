@@ -3,9 +3,9 @@
 
     document
         .querySelector("#contact-form-button")
-        .addEventListener("click", submitMail);
-
-    function submitMail() {
+        .addEventListener("click", (event) =>{
+        event.preventDefault();
+        event.stopPropagation();
         console.log("YOU CLICKED THE SUBMIT BUTTON.");
         let name = document.querySelector("#name").value;
         let email = document.querySelector("#mail").value;
@@ -13,5 +13,7 @@
         console.log("Name" + name);
         console.log("Email" + email);
         console.log("Message" + message);
-    }
+    });
+
+    function submitMail() 
 })();
