@@ -1,8 +1,20 @@
-body {
-    background-color: blue;
+html {
+    box-sizing: border-box;
 }
 
-button {
-    background-color: teal;
-    color: white;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    
+font-family: "Alumni Sans", sans-serif;
+
+}
+
+div {
+    border: 1px solid black;
 }
