@@ -6,7 +6,7 @@
         .addEventListener("click", (event) =>{
             event.preventDefault();
             event.stopPropagation();
-            console.log("YOU CLICKED THE SUBMIT BUTTON.");
+            console.log("YOU SENT A MESSAGE.");
             let name = document.querySelector("#name").value;
             let email = document.querySelector("#mail").value;
             let message = document.querySelector("#msg").value;

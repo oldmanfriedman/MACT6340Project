@@ -1,3 +1,8 @@
+
+/* div {
+    border: 1px solid black;
+} */
+
 html {
     box-sizing: border-box;
 }
@@ -9,7 +14,7 @@ html {
 }
 
 body {
-background-color: black;
+background-color: rgb(255, 255, 255);
     
 
 font-family: "Marcellus", sans-serif;
@@ -20,4 +25,54 @@ font-family: "Marcellus", sans-serif;
     border: 1px solid black;
 } */
 
+/* Splash container */
 
+#splash {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Video */
+#bg-video {
+    position: absolute;
+
+    top: -60px;
+
+    left: 0;
+    width: 100%;
+    height: 115%;
+
+    object-fit: cover;
+
+    z-index: 1;
+    opacity: 0.75;
+}
+
+/* Text */
+#hero-text {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    color: black;
+}
+
+#hero-text h1 {
+    font-size: clamp(3rem, 6vw, 8rem);
+}
+
+/* NAVBAR LINK COLORS */
+.nav-link {
+    color: black !important;
+    background-color: transparent !important;
+}
+
+.nav-link:hover {
+    color: gray !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent !important;
+    color: black !important;
+}
