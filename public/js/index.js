@@ -6,6 +6,6 @@
         .addEventListener("click", (event) =>{
             event.preventDefault();
             event.stopPropagation();
-            console.log("I LIVE.");
+            console.log("MAKE MY DAY.");
              });
 })();

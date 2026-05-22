@@ -14,7 +14,7 @@ html {
 }
 
 body {
-background-color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
     
 
 font-family: "Marcellus", sans-serif;
@@ -37,18 +37,28 @@ font-family: "Marcellus", sans-serif;
 /* Text */
 #hero-text {
     position: absolute;
-    z-index: 2;
-    width: 100%;
-    color: black;
-}
+    top: 15%;   /* move closer to navbar */
+    left: 50%;
+    transform: translateX(-50%);
 
-#hero-text h1 {
-    font-size: clamp(3rem, 6vw, 8rem);
+    width: 100%;
+    z-index: 2;
+
+    color: white;
+
+    background-image: url("../images/Orbs.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: clamp(900px, 80vw, 2610px);
+
+    padding: clamp(80px, 10vw, 300px);
+
+    text-shadow: 0 0 20px black;
 }
 
 /* NAVBAR LINK COLORS */
 .nav-link {
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
     background-color: transparent !important;
 }
 
@@ -58,5 +68,5 @@ font-family: "Marcellus", sans-serif;
 
 .nav-pills .nav-link.active {
     background-color: transparent !important;
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
 }
