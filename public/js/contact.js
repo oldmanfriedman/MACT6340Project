@@ -1,18 +1,50 @@
 (function () {
- "use strict";
+  "use strict";
 
-    document
-        .querySelector("#contact-form-button")
-        .addEventListener("click", (event) =>{
-            event.preventDefault();
-            event.stopPropagation();
-            console.log("YOU SENT A MESSAGE.");
-            let name = document.querySelector("#name").value;
-            let email = document.querySelector("#mail").value;
-            let message = document.querySelector("#msg").value;
-            console.log("Name" + name);
-            console.log("Email" + email);
-            console.log("Message" + message);
-        });
- 
+  let form = document.querySelector("#contact-form");
+
+  document.querySelector("#send-contact").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    let formValid = true;
+    if (!form.checkValidity()) {
+      formValid = false;
+    }
+    form.classList.add("was-validated");
+    if (formValid) {
+      sendTheEmail();
+    }
+  });
+
+function sendTheEmail() {
+    let obj = {
+      sub: "Someone submitted a contact form!",
+      txt: `${document.querySelector("#contact-first").value} 
+      ${document.querySelector("#contact-last").value} 
+      sent you a message that reads ${
+        document.querySelector("#contact-question").value
+      }.
+      Their email address is ${
+        document.querySelector("#contact-email-addr").value
+      }`,
+    };
+
+    fetch("/mail", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      document.querySelector("#contact-button-response").innerHTML =
+        response.result;
+    })
+    .then(() => {
+      setTimeout(() => {
+        document.querySelector("#contact-button-response").innerHTML = "";
+      }, "5000");
+    });
+}
 })();
