@@ -76,7 +76,7 @@ background-position: center -350px;
     color: white;
 }
 
-/* MOVE FEATURED SECTION UPWARD OR DOWN-WARD */
+/* MOVE FEATURED AND ABOUT SECTIONS UPWARD OR DOWN-WARD */
 #featured {
     margin-top: -290px;
 
@@ -84,6 +84,23 @@ background-position: center -350px;
     z-index: 10;
 }
 
+#about {
+    margin-top: 290px;
+}
+
 #hero-text {
     pointer-events: none;
+}
+
+/* HOMEPAGE ARTIST IMAGE */
+#homeArtistImage {
+    cursor: pointer;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* ARTIST PAGE IMAGE */
+#artistImage {
+    position: relative;
+    top: -240px;
 }
