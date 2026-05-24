@@ -48,8 +48,8 @@ font-family: "Marcellus", sans-serif;
 
     background-image: url("../images/Orbs.png");
     background-repeat: no-repeat;
-background-position: center -230px;
-    background-size: clamp(900px, 80vw, 2610px);
+background-position: center -350px;
+    background-size: clamp(1200px, 100vw, 3200px);
 
     padding: clamp(80px, 10vw, 300px);
 
@@ -74,4 +74,16 @@ background-position: center -230px;
 /* CONTACT FORM LABELS */
 .form-label {
     color: white;
+}
+
+/* MOVE FEATURED SECTION UPWARD OR DOWN-WARD */
+#featured {
+    margin-top: -290px;
+
+    position: relative;
+    z-index: 10;
+}
+
+#hero-text {
+    pointer-events: none;
 }
