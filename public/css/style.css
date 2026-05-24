@@ -123,3 +123,19 @@ background-position: center -350px;
     font-size: 1rem;
     letter-spacing: 1px;
 }
+
+/* CONTACT PAGE FOOTER FIX */
+
+body:has(#contact-form) {
+    min-height: 100vh;
+}
+
+body:has(#contact-form) .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+body:has(#contact-form) #site-footer {
+    margin-top: auto;
+}
