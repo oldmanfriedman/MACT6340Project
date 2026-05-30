@@ -1,10 +1,5 @@
-/* div {
-    border: 1px solid black;
-} */
-
 html {
     box-sizing: border-box;
-    min-height: 100%;
 }
 
 *,
@@ -14,20 +9,28 @@ html {
 }
 
 body {
-    background-color: rgb(0, 0, 0);
-
+    background-color: black;
     font-family: "Marcellus", sans-serif;
-
     min-height: 100vh;
-
     overflow-x: hidden;
-    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
 }
 
-/* Splash container */
+/* NAVBAR */
+
+.nav-link,
+.nav-pills .nav-link.active {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.nav-link:hover {
+    color: gray !important;
+}
+
+/* HERO / SPLASH */
 
 #splash {
     position: relative;
@@ -36,10 +39,9 @@ body {
     overflow: visible;
 }
 
-/* Text */
 #hero-text {
     position: absolute;
-    top: 1%;   /* move closer to navbar */
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -48,9 +50,11 @@ body {
 
     color: white;
 
+    pointer-events: none;
+
     background-image: url("../images/Orbs.png");
     background-repeat: no-repeat;
-background-position: center -350px;
+    background-position: center -350px;
     background-size: clamp(1200px, 100vw, 3200px);
 
     padding: clamp(80px, 10vw, 300px);
@@ -58,84 +62,181 @@ background-position: center -350px;
     text-shadow: 0 0 20px black;
 }
 
-/* NAVBAR LINK COLORS */
-.nav-link {
-    color: rgb(255, 255, 255) !important;
-    background-color: transparent !important;
+/* PAGE TITLES */
+
+#artist-headline,
+#project-headline,
+#featured-headline,
+#contact-headline {
+    padding-top: clamp(220px, 20vw, 320px);
 }
 
-.nav-link:hover {
-    color: gray !important;
+#artist-headline h1,
+#project-headline h1,
+#featured-headline h1,
+#contact-headline h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1;
+    margin: 0;
 }
 
-.nav-pills .nav-link.active {
-    background-color: transparent !important;
-    color: rgb(255, 255, 255) !important;
-}
+/* HOMEPAGE SECTIONS */
 
-/* CONTACT FORM LABELS */
-.form-label {
-    color: white;
-}
-
-/* MOVE FEATURED AND ABOUT SECTIONS UPWARD OR DOWN-WARD */
 #featured {
-    margin-top: -290px;
+    margin-top: clamp(-290px, -18vw, -120px);
 
     position: relative;
     z-index: 10;
 }
 
 #about {
-    margin-top: 290px;
+    margin-top: clamp(120px, 18vw, 290px);
 }
 
-#hero-text {
-    pointer-events: none;
-}
+/* IMAGES */
 
-/* HOMEPAGE ARTIST IMAGE */
 #homeArtistImage {
     cursor: pointer;
     width: 100%;
     max-width: 1000px;
 }
 
-/* ARTIST PAGE IMAGE */
 #artistImage {
     position: relative;
-    top: -240px;
+    top: clamp(-180px, -10vw, -40px);
+
+    max-width: 100%;
+}
+
+/* CONTACT */
+
+.form-label {
+    color: white;
 }
 
 /* FOOTER */
 
 #site-footer {
-    background-color: #212529; /* matches Bootstrap bg-dark */
+    background-color: #212529;
+
     width: 100%;
+
     padding: 18px 30px;
+
     margin-top: 80px;
+
+    display: flex;
+    align-items: center;
 }
 
 .footer-content {
-    color: rgba(255,255,255,0.75);
-    font-family: "Marcellus", sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+
     text-align: left;
+
     font-size: 1rem;
+
     letter-spacing: 1px;
 }
 
-/* CONTACT PAGE FOOTER FIX */
+/* IMDb icon */
 
-body:has(#contact-form) {
-    min-height: 100vh;
+.fa-imdb {
+    font-size: clamp(2.8rem, 4vw, 4.5rem);
+
+    color: rgba(255, 255, 255, 0.85);
+
+    transition: 0.3s ease;
 }
 
-body:has(#contact-form) .container {
-    flex: 1;
+.fa-imdb:hover {
+    color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #about {
+        margin-top: 120px;
+    }
+
+    #artistImage {
+        top: 0;
+
+        margin-top: 20px;
+    }
+
+    #featuredInfo {
+        margin-top: 0 !important;
+    }
+}
+#contact-button-response{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* RESPONSIVE HOME PAGE FIXES */
+
+#hero-text h1,
+#featured h1,
+#about h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1;
+}
+
+#hero-text h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+.home-section-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+.home-two-column {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(20px, 4vw, 60px);
 }
 
-body:has(#contact-form) #site-footer {
-    margin-top: auto;
+.home-image-column {
+    flex: 1 1 60%;
+}
+
+.home-info-column {
+    flex: 1 1 30%;
+}
+
+.home-info-column .btn {
+    width: 100%;
+    max-width: 260px;
+    margin: 8px 0;
+}
+
+/* Tablet / phone stacking */
+@media (max-width: 768px) {
+    .home-two-column {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-info-column {
+        text-align: center !important;
+        align-items: center;
+    }
+
+    #featuredInfo {
+        text-align: center !important;
+    }
+
+    #wallet-connect {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    #top-nav .nav-link {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
 }
