@@ -16,6 +16,12 @@ body {
 
     display: flex;
     flex-direction: column;
+
+    padding-bottom: 90px;
+}
+
+main {
+    flex: 1;
 }
 
 /* NAVBAR */
@@ -39,6 +45,10 @@ body {
     overflow: visible;
 }
 
+body.home-page #splash {
+    min-height: 360px;
+}
+
 #hero-text {
     position: absolute;
     top: 1%;
@@ -57,7 +67,7 @@ body {
     background-position: center -350px;
     background-size: clamp(1200px, 100vw, 3200px);
 
-    padding: clamp(80px, 10vw, 300px);
+    padding: clamp(40px, 6vw, 120px);
 
     text-shadow: 0 0 20px black;
 }
@@ -82,15 +92,20 @@ body {
 
 /* HOMEPAGE SECTIONS */
 
-#featured {
-    margin-top: clamp(-290px, -18vw, -120px);
+body.home-page #featured {
+    margin-top: clamp(15px, 2vw, 35px);
 
     position: relative;
     z-index: 10;
 }
 
-#about {
-    margin-top: clamp(120px, 18vw, 290px);
+body.home-page #about {
+    margin-top: clamp(30px, 5vw, 80px);
+}
+
+#featured .spacer,
+#about .spacer {
+    display: none;
 }
 
 /* IMAGES */
@@ -103,8 +118,7 @@ body {
 
 #artistImage {
     position: relative;
-    top: clamp(-180px, -10vw, -40px);
-
+    top: 0;
     max-width: 100%;
 }
 
@@ -118,15 +132,20 @@ body {
 
 #site-footer {
     background-color: #212529;
-
     width: 100%;
-
     padding: 18px 30px;
 
-    margin-top: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 
     display: flex;
     align-items: center;
+}
+
+body {
+    padding-bottom: 90px;
 }
 
 .footer-content {
@@ -155,10 +174,16 @@ body {
 
 /* MOBILE */
 
+/* MOBILE */
+
 @media (max-width: 768px) {
 
+    #featured {
+        margin-top: -60px;
+    }
+
     #about {
-        margin-top: 120px;
+        margin-top: 30px;
     }
 
     #artistImage {
@@ -171,6 +196,7 @@ body {
         margin-top: 0 !important;
     }
 }
+
 #contact-button-response{
     color: rgba(255, 255, 255, 0.75);
 }
