@@ -9,15 +9,14 @@ html {
 }
 
 body {
-    background-color: black;
+    background: black;
+    color: white;
     font-family: "Marcellus", sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-
     display: flex;
     flex-direction: column;
-
-    padding-bottom: 90px;
+    padding-bottom: 160px;
 }
 
 main {
@@ -29,14 +28,14 @@ main {
 .nav-link,
 .nav-pills .nav-link.active {
     color: white !important;
-    background-color: transparent !important;
+    background: transparent !important;
 }
 
 .nav-link:hover {
     color: gray !important;
 }
 
-/* HERO / SPLASH */
+/* SPLASH / HERO */
 
 #splash {
     position: relative;
@@ -54,12 +53,8 @@ body.home-page #splash {
     top: 1%;
     left: 50%;
     transform: translateX(-50%);
-
     width: 100%;
     z-index: 2;
-
-    color: white;
-
     pointer-events: none;
 
     background-image: url("../images/Orbs.png");
@@ -68,8 +63,19 @@ body.home-page #splash {
     background-size: clamp(1200px, 100vw, 3200px);
 
     padding: clamp(40px, 6vw, 120px);
-
+    text-align: center;
     text-shadow: 0 0 20px black;
+}
+
+#hero-text h1,
+#featured h1,
+#about h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1;
+}
+
+#hero-text h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 /* PAGE TITLES */
@@ -90,17 +96,17 @@ body.home-page #splash {
     margin: 0;
 }
 
-/* HOMEPAGE SECTIONS */
+/* HOMEPAGE */
 
 body.home-page #featured {
     margin-top: clamp(15px, 2vw, 35px);
-
     position: relative;
     z-index: 10;
 }
 
 body.home-page #about {
     margin-top: clamp(30px, 5vw, 80px);
+    margin-bottom: 140px;
 }
 
 #featured .spacer,
@@ -117,24 +123,30 @@ body.home-page #about {
 }
 
 #artistImage {
-    position: relative;
-    top: 0;
-    max-width: 100%;
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+}
+
+#featuredImage img,
+#homeArtistImage {
+    border: 2px solid white;
+    box-shadow: 0 0 12px rgba(242, 239, 239, 0.86);
 }
 
 /* CONTACT */
 
-.form-label {
-    color: white;
+.form-label,
+#contact-button-response {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* FOOTER */
 
 #site-footer {
-    background-color: #212529;
+    background: #212529;
     width: 100%;
     padding: 18px 30px;
-
     position: fixed;
     bottom: 0;
     left: 0;
@@ -144,27 +156,15 @@ body.home-page #about {
     align-items: center;
 }
 
-body {
-    padding-bottom: 90px;
-}
-
 .footer-content {
     color: rgba(255, 255, 255, 0.75);
-
-    text-align: left;
-
     font-size: 1rem;
-
     letter-spacing: 1px;
 }
 
-/* IMDb icon */
-
 .fa-imdb {
     font-size: clamp(2.8rem, 4vw, 4.5rem);
-
     color: rgba(255, 255, 255, 0.85);
-
     transition: 0.3s ease;
 }
 
@@ -174,10 +174,7 @@ body {
 
 /* MOBILE */
 
-/* MOBILE */
-
 @media (max-width: 768px) {
-
     #featured {
         margin-top: -60px;
     }
@@ -187,72 +184,11 @@ body {
     }
 
     #artistImage {
-        top: 0;
-
         margin-top: 20px;
     }
 
     #featuredInfo {
         margin-top: 0 !important;
-    }
-}
-
-#contact-button-response{
-    color: rgba(255, 255, 255, 0.75);
-}
-
-/* RESPONSIVE HOME PAGE FIXES */
-
-#hero-text h1,
-#featured h1,
-#about h1 {
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    line-height: 1;
-}
-
-#hero-text h2 {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-}
-
-.home-section-inner {
-    width: min(1100px, 92vw);
-    margin: 0 auto;
-}
-
-.home-two-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(20px, 4vw, 60px);
-}
-
-.home-image-column {
-    flex: 1 1 60%;
-}
-
-.home-info-column {
-    flex: 1 1 30%;
-}
-
-.home-info-column .btn {
-    width: 100%;
-    max-width: 260px;
-    margin: 8px 0;
-}
-
-/* Tablet / phone stacking */
-@media (max-width: 768px) {
-    .home-two-column {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .home-info-column {
-        text-align: center !important;
-        align-items: center;
-    }
-
-    #featuredInfo {
         text-align: center !important;
     }
 
