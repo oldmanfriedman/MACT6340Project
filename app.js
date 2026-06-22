@@ -11,11 +11,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-  res.render("index.ejs");
+res.render("index.ejs");
 });
 
 app.get('/projects', (req, res) => {
-  res.render("projects.ejs", {projectArray: data});
+  res.render("projects.ejs", { projectArray: data });
 });
 
 app.get("/project/:id", (req, res) => {
@@ -23,15 +23,15 @@ app.get("/project/:id", (req, res) => {
   if (id > data.length) {
   throw new Error("NO PROJECT WITH THAT ID");
 }
-res.render("project.ejs", {projectArray: data, which: id})
+res.render("project.ejs", {projectArray: data, which: id});
 });
 
 app.get('/contact', (req, res) => {
   res.render("contact.ejs");
 });
 
-app.get('/project', (req, res) => {
-  res.render("project.ejs");
+app.get('/mainProject', (req, res) => {
+  res.render("mainProject.ejs");
 });
 
 app.get('/featured', (req, res) => {

@@ -141,6 +141,53 @@ body.home-page #about {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* ERROR PAGE */
+
+#error-page {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-box {
+    border: 2px solid white;
+    box-shadow: 0 0 18px rgba(242, 239, 239, 0.86);
+    padding: clamp(40px, 6vw, 90px);
+    max-width: 800px;
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.error-box h1 {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 1;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px black;
+}
+
+.error-box p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.error-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 12px 24px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.error-button:hover {
+    color: black;
+    background: white;
+}
+
 /* FOOTER */
 
 #site-footer {
