@@ -62,7 +62,7 @@
     <div class="spacer"></div>
 <% projectArray.forEach((item, index) => { %>
 <div>
-<a href='/project/<%= index + 1 %>'><%= item %></a>
+<%- include('projectCard', {ident: item.id, image: item.img_url, name: item.project_name}); %>
 </div>
 <% }); %>
 </div>
